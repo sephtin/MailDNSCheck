@@ -107,7 +107,6 @@ use 5.012;
 use FindBin;
 use lib "$FindBin::RealBin/modules/share/perl/5.14.2/";
 use MIME::Lite;
-#use Email::Sender;
 use Log::Log4perl;
 use Time::Piece;
 use File::Copy qw(copy),qw(move);
@@ -695,36 +694,6 @@ sub mailer {
   }
   $msg->send or print "failed for some reason: $!\n";  ## - Send the message - Inject to MTA unless prev. line is uncommented
 }
-
-#sub mailer {
-#  my @mailer_args = @_;
-#  setlogging ();
-#  $logger->debug("Setting up mailer- Subject:$mailer_args[0], Body: $mailer_args[1], Attachment1: $mailer_args[2]");
-#  sleep(2);
-#  my $msg;
-#
-#  my $email = Email::Simple->create(
-#    header => [
-#      To      => '"Xavier Q. Ample" <x.ample@example.com>',
-#      From    => '"Bob Fishman" <orz@example.mil>',
-#      Subject => "don't forget to *enjoy the sauce*",
-#    ],
-#    body => "This message is short, but at least it's cheap.\n",
-#  );
-#
-#  sendmail($email);
-#
-#  my $transport = Email::Sender::Transport::SMTP->new({
-#    host => 'smtp.example.com',
-#    port => 25,
-#  });
-
-
-
-
-
-
-
 
 ####################
 ###  Begin Work  ###
