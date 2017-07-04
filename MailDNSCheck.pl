@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-## - MailDNSCheck.pl - By John Ricker for Northern Trust
+## - MailDNSCheck.pl - By John Ricker (sephtin ~@T~ gmail.com
 ##
 ##    Copyright (C) <2017>  <John Ricker>
 ##
