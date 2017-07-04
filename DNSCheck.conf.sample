@@ -1,0 +1,107 @@
+#-OPTIONAL- Config file to be used by MailDNSCheck.pl
+#Values in this file will overwrite default config values.
+
+#Remove the comment (#) and modify the setting for it to take affect.
+#Note: You should only change these settings if things aren't in expected locations.
+# If after making changes to this file, the script stops working, try defaults first!
+#Note: All paths must be fully qualified, no relative paths.
+
+
+####
+#### - Tools & Settings - Required tools to make the script work properly
+####
+
+#### - quiet controls whether output should be silent or verbose
+## - Command line args of -q (quiet) or -d (debug) will overwrite any changes here.
+## - Default is 0 (off).  Set to 1 to enable quiet mode by default.  
+#quiet = 0
+
+#### - rfcdiff (REQUIRED) is a diff tool that outputs pretty (html) diffs used by this script.
+## - Default is in an "rfcdiff" folder in the directory the script is run from (MailDNSCheck/rfcdiff/rfcdiff).
+#rfcdiff = /path/to/rfcdiff
+
+#### - dnsconf (OPTIONAL) is the file that holds an OPTIONAL dns config file
+## - This is OPTIONAL.  The script should work fine if this is not enabled.
+## - To use a DNS Nameserver other than default, create a .conf file in the standard linux resolv.conf format..
+## - An example entry using Google's DNS server: "NAMESERVER 8.8.8.8"
+## - Default is mydns.conf in the working directory that the script was run from (MailDNSCheck/mydns.conf).
+#dnsconf = /path/to/mydns.conf
+
+
+####
+#### - Input - List of domains to check
+####
+
+#### - inputfile is the file containing the list of domains to check.
+## - Default is DNSCheck.txt in the working directory that the script was run from (MailDNSCheck/DNSCheck.txt)
+#inputfile = /path/to/intpufile/DNSCheck.txt
+
+
+####
+#### - Logging - Output from the script
+####
+
+#### - logpath is the directory that log files are stored in.
+## - It should be the full path to the logging directory
+## - Example:  /full/path/to/dir
+## - Default is to use the working directory that the script was run from (/path/to/MailDNSCheck)).
+#logpath = /path/to/log
+
+#### - logfilename is the name of the error log to use.
+## - Default is error.log
+#logfilename = error.log
+
+#### - outfilename is the file that contains the output of the DNS checks.
+## - Default is output.csv
+#outfilename = output.csv
+
+#### - outfile_lastname is the file that contains the DNS checks from the previous run.
+## - Default is output_last.csv
+#outfile_lastname = output_last.csv
+
+#### - chgfilename is the file that lists the changes since the previous run in HTML format.
+## - Default is changes.html
+#chgfilename = changes.html
+
+
+####
+#### - Archiving - Archive of output files
+####
+
+#### - archiveenabled enables or disables archiving of output and change files
+## - 0 disables archiving, 1 enables archiving.
+## - Default is 1 (archiving enabled).
+#archiveenabled = 1
+
+#### - archivepath is the directory that archive files are stored in if archiving is enabled.
+## - It should be the full path to the archive directory
+## - Example:  /full/path/to/dir
+## - Default is an "archived" directory, within the "logpath" direcotry (option in logging above).
+#archivepath = $logpath/archived
+
+
+####
+#### - Reporting - Receive an email with output from the script
+####
+
+#### - reportingenabled enables or disables email reporting of results
+## - 0 disables reporting, 1 enables reporting.
+## - Default is 0 (reporting disabled).
+#reportingenabled = 0
+
+#### - report_recipient is the email address of the report recipient.
+## - Multiple recipients should be comma separated.
+#report_recipient = recipent@example.com,recipient2@example.com
+
+#### - report_sender (OPTIONAL) is the email address the report should be sent as
+## - If not specified, it will send as the account name the script was run as with the domain of the sending host.
+#report_sender = DNSCheck@example.com
+
+#### - use_external_mta allows you to use an external SMTP mail server.
+## - To use an external mail server, set this to 1.
+## - Default (0) will inject the message to the localhost MTA (works for most servers).
+#use_external_mta = 0
+
+#### - report_mailhost sets the SMTP server to use if use_external_mta is set to 1.
+## - Defautls to localhost
+#report_mailhost = localhost

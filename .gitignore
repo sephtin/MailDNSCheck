@@ -1,0 +1,16 @@
+0.*
+DNSCheck.txt
+DNSCheck.conf
+mydns.conf
+TEST*
+changes.html
+error.log
+output*
+rfcdiff
+archived
+modules
+/*.txt
+!*.txt.sample
+/*.conf
+!*.conf.sample
+
